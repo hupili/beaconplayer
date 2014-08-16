@@ -99,6 +99,9 @@
                                 $('#status').text('IN');
                                 $('#accuracy').text(pluginResult['beacons'][0]['accuracy']);
                                 $('#rssi').text(pluginResult['beacons'][0]['rssi']);
+                                url = 'Violin.arco.ff.sulG.G3.stereo.aif';
+                                var media = new Media(url);
+                                media.play({numberOfLoops: 1});
                             } else {
                                 $('#status').text('OUT');
                             };
