@@ -96,6 +96,7 @@
 
                         didRangeBeaconsInRegion: function (pluginResult) {
                             if (pluginResult['beacons'].length > 0){
+                                console.log('on didRangeBeaconsInRegion');
                                 $('#status').text('IN');
                                 $('#accuracy').text(pluginResult['beacons'][0]['accuracy']);
                                 $('#rssi').text(pluginResult['beacons'][0]['rssi']);
@@ -104,13 +105,18 @@
 //                                min_rssi = 40;
 //                                max_rssi = 60;
                                 var cutoff = [41, 45, 48, 50, 52, 54];
-                                for (var i = 0; i < cutoff.length; i++){
+                                var i = 0;
+                                for (; i < cutoff.length; i++){
                                     if (cutoff[i] > rssi_abs){
                                         break;
                                     }
                                 }
-                                url = 'materials/violin/' + sounds[i] + '.aif';
+                                var url = 'materials/violin/' + sounds[i] + '.aif';
+                                console.log('cutoff: ' + i);
+                                console.log('note:' + sounds[i]);
+                                console.log('url:' + url);
                                 var media = new Media(url);
+                                media.stop();
                                 media.play({numberOfLoops: 1});
                             } else {
                                 $('#status').text('OUT');
@@ -149,6 +155,10 @@
                     //var identifier = '8/F Batman Classroom';
                     //var major = 8;
                     //var minor = 31664;
+
+//                    var uuid = 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0';
+//                    var identifier = 'AirLocate Trial Beacon from Harry';
+
                     var uuid = '696A7EC5-0797-47DE-BE52-873EEDFCB8BB';
                     var identifier = 'My Mac';
                     var major = 0;
