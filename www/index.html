@@ -99,7 +99,17 @@
                                 $('#status').text('IN');
                                 $('#accuracy').text(pluginResult['beacons'][0]['accuracy']);
                                 $('#rssi').text(pluginResult['beacons'][0]['rssi']);
-                                url = 'Violin.arco.ff.sulG.G3.stereo.aif';
+                                var rssi_abs = Math.abs(pluginResult['beacons'][0]['rssi']);
+                                var sounds = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4'];
+//                                min_rssi = 40;
+//                                max_rssi = 60;
+                                var cutoff = [41, 45, 48, 50, 52, 54];
+                                for (var i = 0; i < cutoff.length; i++){
+                                    if (cutoff[i] > rssi_abs){
+                                        break;
+                                    }
+                                }
+                                url = 'materials/violin/' + sounds[i] + '.aif';
                                 var media = new Media(url);
                                 media.play({numberOfLoops: 1});
                             } else {
@@ -139,8 +149,8 @@
                     //var identifier = '8/F Batman Classroom';
                     //var major = 8;
                     //var minor = 31664;
-                    var uuid = 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0';
-                    var identifier = 'AirLocate Trial Beacon from Harry';
+                    var uuid = '696A7EC5-0797-47DE-BE52-873EEDFCB8BB';
+                    var identifier = 'My Mac';
                     var major = 0;
                     var minor = 0;
                     var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid, major, minor);
