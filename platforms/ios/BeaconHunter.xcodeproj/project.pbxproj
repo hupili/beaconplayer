@@ -42,6 +42,8 @@
 		0CCB1BB472954ABF82AFD4F3 /* AppDelegate+CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AA319D604C49CCA154AC82 /* AppDelegate+CDVLocationManager.m */; };
 		4483F75431AE4EC69EC73310 /* LMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B410BCB244D5C85709AE6 /* LMLogger.m */; };
 		ED26CF02734644BFB3BFF95E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE9F297CE3F4F17919A3F66 /* CoreBluetooth.framework */; };
+		FAEFD58BF584440BAAC1B4A6 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E716816A7846F1BE06BB1A /* CDVDevice.m */; };
+		B20BB79C6DF14DF7BEB10995 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 254D532471CC46AF9829884E /* CDVLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,10 @@
 		EA549376003F480D9C221904 /* AppDelegate+CDVLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+CDVLocationManager.h"; path = "org.apache.cordova.ibeacon/AppDelegate+CDVLocationManager.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		178E9CF4C5864C5D8953DED5 /* LMLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LMLogger.h"; path = "org.apache.cordova.ibeacon/LMLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		ACE9F297CE3F4F17919A3F66 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		D6E716816A7846F1BE06BB1A /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		A580E9D6B048461497032795 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		254D532471CC46AF9829884E /* CDVLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLogger.m"; path = "org.apache.cordova.console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		41D12464B6BC4CC58CD0F06E /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "org.apache.cordova.console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +247,10 @@
 				AD6A561606584F97A34582CF /* CDVLocationManager.h */,
 				EA549376003F480D9C221904 /* AppDelegate+CDVLocationManager.h */,
 				178E9CF4C5864C5D8953DED5 /* LMLogger.h */,
+				D6E716816A7846F1BE06BB1A /* CDVDevice.m */,
+				A580E9D6B048461497032795 /* CDVDevice.h */,
+				254D532471CC46AF9829884E /* CDVLogger.m */,
+				41D12464B6BC4CC58CD0F06E /* CDVLogger.h */,
 			);
 			name = Plugins;
 			path = "BeaconHunter/Plugins";
@@ -438,6 +448,8 @@
 				F0958A68D76A4DD0894718FC /* CDVLocationManager.m in Sources */,
 				0CCB1BB472954ABF82AFD4F3 /* AppDelegate+CDVLocationManager.m in Sources */,
 				4483F75431AE4EC69EC73310 /* LMLogger.m in Sources */,
+				FAEFD58BF584440BAAC1B4A6 /* CDVDevice.m in Sources */,
+				B20BB79C6DF14DF7BEB10995 /* CDVLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

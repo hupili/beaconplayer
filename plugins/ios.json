@@ -27,6 +27,14 @@
                         {
                             "xml": "<feature name=\"LocationManager\"><param name=\"ios-package\" value=\"CDVLocationManager\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -35,6 +43,12 @@
     },
     "installed_plugins": {
         "org.apache.cordova.ibeacon": {
+            "PACKAGE_NAME": "net.hupili.beaconhunter"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "net.hupili.beaconhunter"
+        },
+        "org.apache.cordova.console": {
             "PACKAGE_NAME": "net.hupili.beaconhunter"
         }
     },
