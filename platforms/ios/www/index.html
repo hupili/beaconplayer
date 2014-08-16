@@ -41,18 +41,94 @@
                 <a id="touch" class="btn btn-default" href="">Test touch me</a>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12 column">
+                Here's the log:
+                <pre id="log"></pre>
+            </div>
+        </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <!--<script type="text/javascript">-->
+            <!--app.initialize();-->
+        <!--</script>-->
         <script>
-            $(function(){
-                $('#touch').on('click', function(){
-                    alert('you touched!');
+            document.addEventListener("deviceready", function(){
+
+                $(function() {
+                    $('#touch').on('click', function () {
+                        alert('you touched!');
+                    });
+
+                    window.logToDom = function (message) {
+//                    var e = document.createElement('label');
+//                    e.innerText = message;
+//
+//                    var br = document.createElement('br');
+//                    var br2 = document.createElement('br');
+                        var log = $('#log');
+                        //log.append(e);
+                        //log.append(br);
+                        //log.append(br2);
+                        log.text(message + '\n' + log.text());
+
+                        //window.scrollTo(0, window.document.height);
+                    };
+
+                    logToDom('log to dom is working');
+                    logToDom('log to dom is working');
+                    logToDom('log to dom is working OK');
                 });
-            });
+
+                $(function() {
+                    //test logToDom
+                    logToDom('log to dom in another block');
+                    logToDom('log to dom in another block');
+                    console.log('test console log');
+                });
+
+                $(function() {
+                    var delegate = new cordova.plugins.locationManager.Delegate().implement({
+
+                        didDetermineStateForRegion: function (pluginResult) {
+
+                            logToDom('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+
+                            cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: '
+                                    + JSON.stringify(pluginResult));
+                        },
+
+                        didStartMonitoringForRegion: function (pluginResult) {
+                            console.log('didStartMonitoringForRegion:', pluginResult);
+
+                            logToDom('didStartMonitoringForRegion:' + JSON.stringify(pluginResult));
+                        },
+
+                        didRangeBeaconsInRegion: function (pluginResult) {
+                            logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+                        }
+
+                    });
+
+                    console.log('executed here. log console');
+                    logToDom('Executed here, ready to find iBeacon!');
+
+                    var uuid = 'B9407F30-F5F8-466E-AFF9-25556B57FE6D';
+                    var identifier = '8/F Batman Classroom';
+                    var minor = 31664;
+                    var major = 8;
+                    var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(identifier, uuid, major, minor);
+
+                    cordova.plugins.locationManager.setDelegate(delegate);
+                    cordova.plugins.locationManager.startMonitoringForRegion(beaconRegion)
+                            .fail(console.error)
+                            .done();
+                });
+
+            }, false);
+
         </script>
     </body>
 </html>
