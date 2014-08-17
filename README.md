@@ -22,6 +22,10 @@ Run on iOS by
 cordova run ios
 ```
 
+If you don't have an iBeacon at hand, 
+you can emulate one using your MAC, 
+e.g. via [BeaconEmitter](https://github.com/lgaches/BeaconEmitter).
+
 ## How
 
    * Use iBeacon to detect distance between device and handle.
