@@ -34,5 +34,6 @@ cordova run ios
    * [Cordova iBeacon plugin](https://github.com/petermetz/cordova-plugin-ibeacon).
    * [Cordova media plugin](https://github.com/apache/cordova-plugin-media).
 
+## License
 
-
+MIT
